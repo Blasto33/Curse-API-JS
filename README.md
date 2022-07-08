@@ -1,5 +1,5 @@
 # Curse-API-JS
-🚀 A modern NodeJS library to easily retrieve informations using the new CurseForge API. An equivalent to the [Curse API, a PHP Library](https://github.com/mTxServ/curse-api).
+🚀 A modern NodeJS library to easily retrieve informations using the new CurseForge API. An equivalent to the [Curse API, a PHP Library](https://github.com/mTxServ/curse-api) made by [mTxServ](https://github.com/mTxServ).
 
 Please do not forget to star the project if you like/use it ⭐
 
