@@ -18,8 +18,10 @@ npm install curse-api-js
 ## Example
 
 ```
+const { CurseClient } = require("curse-api-js");
+
 const curse = new CurseClient(<your_api_key>) // https://console.curseforge.com/?#/api-keys
 
-// Get the 30 most popular mods for the game provided as parameter
+// Get the 30 most popular mods for the game provided as parameter, example function that will be removed later
 curse.getMods('minecraft')
 ```
