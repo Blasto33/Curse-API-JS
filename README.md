@@ -9,11 +9,7 @@ Please do not forget to star the project if you like/use it ⭐
 
 - Node >= 18
 
-<<<<<<< HEAD
 This library has been made to be lightweight and to not depend on any other package, for the best reliability. This way, you can safely use it for all of your projects without hassle.
-=======
-This library has been made to be lightweight and to not depends on any other package, for the best reliability. This way, you can safely use it for all of your projects without hassle. It relies on fetch to get the best results.
->>>>>>> a1784e55853c5a59cb84eb4125aff39a59221c60
 
 ## Installation
 
@@ -26,7 +22,6 @@ npm install curse-api-js
 ```
 const { curseClient } = require("curse-api-js");
 
-<<<<<<< HEAD
 const curse = new curseClient()
 
 curse.setToken(<your_api_key>) // https://console.curseforge.com/?#/api-keys
@@ -59,10 +54,3 @@ curse.Minecraft.getMods(<versionSlug>, <filter>)
 // Not yet implemented
 curse.Minecraft.getFeaturedMods()
 ```
-=======
-const curse = new curseClient(<your_api_key>) // https://console.curseforge.com/?#/api-keys to get your own key
-
-// Get the 30 most popular mods for the game provided as parameter, example function that will be removed later
-curse.getMods('minecraft')
-```
->>>>>>> a1784e55853c5a59cb84eb4125aff39a59221c60
