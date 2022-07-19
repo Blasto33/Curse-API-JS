@@ -1,15 +1,24 @@
+const { Game, Minecraft } =  require("./classes/minecraft/minecraft");
+
+process.removeAllListeners('warning');
+
 class curseClient {
 
+    Minecraft
     #api_key
     #api_URL = new URL("https://api.curseforge.com/v1/")
+    #myHeaders = new Headers({
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    })
 
     /**
      * Creates a new CF client, from which you will be able to call endpoints.
      * 
      * @param api_key - Your own API Key from Curseforge that you can receive from https://console.curseforge.com/#/api-keys, after logging in through Google
      */
-    constructor(api_key) {
-      this.#api_key = api_key;
+    constructor() {
+      this.#api_key = "";
     }
 
     games = {
@@ -19,9 +28,14 @@ class curseClient {
     #checkIfGamesExists(game_name) {
         let isGameExisting = this.games.hasOwnProperty(game_name)
 
-        if (isGameExisting === false)
-            console.log("Game doesn't exist or isn't supported yet.")
-        console.log(isGameExisting)
+        if (isGameExisting === false) 
+            console.log(game_name + " Game doesn't exist or isn't supported yet.")
+    }
+
+    setToken(api_key) {
+      this.#api_key = api_key
+      this.#myHeaders.append('x-api-key', api_key);
+      this.Minecraft = new Minecraft(this.#api_key, this.#myHeaders)
     }
 
     getGames() {
@@ -48,24 +62,13 @@ class curseClient {
     }
 
     getMods(game) {
-        /**
-         * 
-         * @param gameName Game to get mods for.
-         * @returns an object with multiple lists of [[Mod]]
-         */
-
-        let myHeaders = new Headers({
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "x-api-key": this.#api_key
-        })
 
         let body = {
-            "gameId": 432,
+            "gameId": this.games[game],
             "excludedModIds": [
               0
             ],
-            "gameVersionTypeId": 73242
+            "gameVersionTypeId": 73242 // Minecraft 1.19
         };
 
         console.log("Getting mods 🚀")
@@ -75,7 +78,7 @@ class curseClient {
         fetch(this.#api_URL + 'mods/featured',
         {
             method: 'POST',
-            headers: myHeaders,
+            headers: { 'x-api-key': this.api_key },
             body: JSON.stringify(body),
         })
         .then(function(serverPromise){ 
@@ -86,15 +89,13 @@ class curseClient {
               .catch(function(e){
                 console.log(e);
               });
-          })
-          .catch(function(e){
-              console.log(e);
-            });
+        })
+        .catch(function(e){
+            console.log(e);
+        });
         
     }
 
 }
 
 module.exports.curseClient = curseClient;
-
-
