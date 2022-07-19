@@ -10,7 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/Blasto33/Curse-API-JS.git"
   },
-  "keywords": [],
+  "keywords": [
+    "minecraft",
+    "curse",
+    "curseforge",
+    "modding",
+    "mods",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
