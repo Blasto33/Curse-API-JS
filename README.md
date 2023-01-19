@@ -1,3 +1,5 @@
+![CurseAPIJS Logo](https://i.imgur.com/BF2jPog.png)
+
 # 🔥 Curse-API-JS
 🚀 A modern NodeJS wrapper library to easily retrieve informations using the new CurseForge API. An equivalent to the [Curse API, a PHP Library](https://github.com/mTxServ/curse-api) made by [mTxServ](https://github.com/mTxServ).
 
