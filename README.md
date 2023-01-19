@@ -15,13 +15,13 @@ This library has been made to be lightweight and to not depend on any other pack
 
 ## 💻 Installation
 
-```
-npm install curse-api-js
+```bash
+$ npm install curse-api-js
 ```
 
 ## 🔍 Example
 
-```
+```js
 const { curseClient } = require("curse-api-js");
 
 const curse = new curseClient()
@@ -38,14 +38,14 @@ CurseAPIJS will support all the games available on CurseForge. For now, only Min
 
 
 #### 🪙 Set your own personal/team token to access CurseForge API, mandatory.
-```
+```js
 // Sets your personal/team token to access CurseForge API, mandatory.
 curse.setToken(<your_api_key>)
 ```
 
 ### ⛏️ Minecraft
 
-```
+```js
 // Access the specified game methods, e.g Minecraft
 curse.Minecraft
 
